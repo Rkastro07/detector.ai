@@ -198,7 +198,7 @@ def index():
         score_final=score_final,
         relatorio=relatorio,
         flesch=flesch,
-        topicos=round(topicos * 10, 2) if topicos else None,
+        topicos=round(topicos * 10, 2) if topicos is not None else None,
         variacao_parag=variacao_parag,
         rep_conectores=rep_conectores,
         densidade_jargao=densidade_jargao,
