@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Detector de Texto por IA - Etapa 1</title>
+</head>
+<body>
+    <h1>🧠 Detector de Texto por IA - Etapa 1 (Análise Estrutural)</h1>
+    <form method="POST" enctype="multipart/form-data">
+        <p><input type="file" name="arquivo" required></p>
+        <button type="submit">Enviar e Analisar</button>
+    </form>
+
+    {% if resultado is not none %}
+        <h2>🔍 Resultado da Análise</h2>
+        <p><strong>Score Bruto:</strong> {{ resultado }}/100</p>
+
+{% if score_final is not none %}
+    <p><strong>🎯 Score Final Ajustado:</strong> {{ score_final }}/100</p>
+{% endif %}
+
+<p><strong>Índice de Legibilidade (Flesch):</strong> {{ flesch }}</p>
+<p><strong>Proporção de Tópicos por Parágrafo:</strong> {{ topicos|round(2) }}</p>
+
+        <h3>📌 Indicadores:</h3>
+        <ul>
+            {% for item in relatorio %}
+                <li>{{ item }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>
