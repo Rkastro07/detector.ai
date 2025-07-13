@@ -1,0 +1,4 @@
+Flask
+python-docx
+PyPDF2
+textstat
